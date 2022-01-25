@@ -1,0 +1,149 @@
+/* styles for my website */
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+body {
+    background: #F7E3D4;
+}
+
+header {
+    background: rgba(251, 169, 10, 0.7);
+    overflow: hidden;
+    padding:20px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius: 8px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+#inner-header,
+#inner-footer {
+    margin:0px auto;
+    max-width:1200px;
+}
+
+#logo {
+    float: left;
+    width: 170px;
+}
+
+nav {
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+nav ul {
+    float:right;
+    margin-right: 20px;
+}
+
+nav li {
+    float:left;
+    margin-left:50px;
+    list-style-type: none;
+}
+
+#wrapper {
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin:20px auto;
+    max-width:1200px;
+}
+
+#hero {
+    background: rgba(252, 115, 7, 0.7);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    width: 62%;
+    margin-right: 3%;
+    /* clear:both; */
+    display: flex;
+}
+
+main {
+    order: 3;
+    width:62%;
+    padding: 5px;
+    margin-bottom:20px;
+    background:#FDDC22;
+    /* float:left; */
+}
+
+#mamp-screenshot {
+    display: block;
+    width: 90%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+aside {
+    text-align: center;
+    width:35%;
+    padding: 5px;
+    background:#FDDC22;
+    /* float:right; */
+}
+
+aside h3 {
+    margin: 25px 0px 25px 0px;
+}
+
+input {
+    width: 70%;
+    height: 50px;
+    background: #FBA90A;
+    border: none;
+    border-radius: 8px;
+}
+input:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
+#my-photo {
+    width: 300px;
+    height: 250px;
+    margin: 20px 40px 20px 40px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+}
+#about-me {
+    margin: 20px 20px 40px 0px;
+    align-self: flex-end;
+}
+
+#about-me h2 {
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+footer {
+    border-top: 1px solid #666;
+    background:#342E09;
+    height:50px;
+    clear:both;
+    line-height: 50px;
+    color: #FC7307;
+}
+
+footer ul {
+    float:right;
+}
+
+footer li {
+    float:left;
+    margin-right:30px;
+    list-style-type: none;
+}
+
+.current {
+    color:red;
+}
