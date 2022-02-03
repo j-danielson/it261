@@ -14,19 +14,23 @@
             <img id="logo" src="images/logo.jpg" alt="logo">
             </a>   SAVING INCASE I WANT AN IMAGE --> 
             <!-- </a> -->
-            <nav>
+            <div id="welcome">
                 <h1>Welcome To My Portal Page!</h1>
+            </div>  
+            <nav>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="daily.php">Daily</a></li>
-                    <li><a href="project.php">Project</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="gallery.php">Gallery</a></li>
+                    <li><a class="headNav" href="/website/index.php">Home</a></li>
+                    <li><a class="headNav" href="website/daily.php">Switch</a></li>
+                    <li><a class="headNav" href="website/adder.php">Troubleshoot</a></li>
+                    <li><a class="headNav" href="">Project</a></li>
+                    <li><a class="headNav" href="">Calculator</a></li>
+                    <li><a class="headNav" href="">Gallery</a></li>
+                    <li><a class="headNav" href="">Database</a></li>
                 </ul>
             </nav>
         </div> <!---end inner header-->
     </header>
+    <!-- <div class="line">&nbsp;</div> -->
     <div id="wrapper">
         <div id="hero">
             <img id="my-photo" src="images/profilephoto.jpg" alt="Me">
@@ -44,14 +48,49 @@
         </main>
         <aside>
             <h3>Weekly Assignments</h3>
-            <form action="weeks/week2/index.php">
-                <input type="submit" value="WEEK 2" />
-            </form>
-            <form action="weeks/week3/home.php">
+            <!-- <form action="weeks/week2/index.php">
+                <input id="week1btn" type="submit" value="WEEK 2" />
+            </form> -->
+            <button id="week2btn" type="button">WEEK 2</button>
+            <button id="week3btn" type="button">WEEK 3</button>
+            <button id="week4btn" type="button">WEEK 4</button>
+            <!-- <form action="weeks/week3/home.php">
                 <input type="submit" value="WEEK 3" />
-            </form>
+            </form> -->
             <!-- <a href="weeks/week2/">Week 2</a> -->
         </aside>
+
+        <div id="week2modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week2/currency.php"style="margin: 10px">currency.php</a> <br>
+            <a href="weeks/week2/currency-logic.php" style="margin: 10px">currency-logic.php</a><br>
+            <a href="weeks/week2/heredoc.php" style="margin: 10px">heredoc.php</a><br>
+            <a href="weeks/week2/var.php" style="margin: 10px">var.php</a><br>
+            </div>
+        </div>
+
+        <div id="week3modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week3/arrays.php"style="margin: 10px">arrays.php</a> <br>
+            <a href="weeks/week3/date.php" style="margin: 10px">date.php</a><br>
+            <a href="weeks/week3/for-loop.php" style="margin: 10px">for-loop.php</a><br>
+            <a href="weeks/week3/if-else.php" style="margin: 10px">if-else.php</a><br>
+            <a href="weeks/week3/index.php" style="margin: 10px">index.php</a><br>
+            <a href="weeks/week3/switch.php" style="margin: 10px">switch.php</a><br>
+            </div>
+        </div>
+
+        <div id="week4modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week4/form1.php"style="margin: 10px">form1.php</a> <br>
+            <a href="weeks/week4/form2.php" style="margin: 10px">form2.php</a><br>
+            <a href="weeks/week4/form3.php" style="margin: 10px">form3.php</a><br>
+            <a href="weeks/week4/form-get.php" style="margin: 10px">form-get.php</a><br>
+            <a href="weeks/week4/celcius.php" style="margin: 10px">celcius.php</a><br>
+            <a href="weeks/week4/arithmetic-form.php" style="margin: 10px">arithmetic-form.php</a><br>
+
+            </div>
+        </div>
     </div> <!--end of wrapper-->
 
     <footer>
@@ -73,6 +112,44 @@
         document.getElementById
         ("css-checker").setAttribute
         ("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
+
+        var span2 = document.getElementsByClassName("close")[0];
+        var span3 = document.getElementsByClassName("close")[1];
+        var span4 = document.getElementsByClassName("close")[2];
+
+        week2btn.onclick = function() {
+        week2modal.style.display = "block";
+        }
+        week3btn.onclick = function() {
+        week3modal.style.display = "block";
+        }
+        week4btn.onclick = function() {
+        week4modal.style.display = "block";
+        }
+        span2.onclick = function() {
+        week2modal.style.display = "none";
+        }
+        span3.onclick = function() {
+        week3modal.style.display = "none";
+        }
+        span4.onclick = function() {
+        week4modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+        if (event.target == week2modal) {
+            week2modal.style.display = "none";
+            }
+        }
+        window.onclick = function(event) {
+        if (event.target == week3modal) {
+            week3modal.style.display = "none";
+            }
+        } 
+        window.onclick = function(event) {
+        if (event.target == week4modal) {
+            week4modal.style.display = "none";
+            }
+        }  
     </script>
 </body>
 </html>
