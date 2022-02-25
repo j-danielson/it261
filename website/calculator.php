@@ -1,10 +1,11 @@
-?<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Calculator</title>
+    <link href="css/calstyles.css" type="text/css" rel="stylesheet">
 </head>
 <body>
     <h1>My Travel Calculator</h1>
@@ -37,19 +38,58 @@
             <option value="40" <?php if(isset($_POST['efficiency']) && $_POST['efficiency'] == '40') echo 'selected = "selected" ' ;?>>40mpg</option>
             <option value="55" <?php if(isset($_POST['efficiency']) && $_POST['efficiency'] == '55') echo 'selected = "selected" ' ;?>>55mpg</option>
         </select>
+        <div class="buttonbox">
         <input type="submit" value="Calculate">
         <button><a href="">Reset</a></button>
+        </div>
     </form>
     <?php
-        //name, miles, speed, hours, gas, efficiency
-        if(isset($_POST['name'], $_POST['email'], $_POST['amount'],$_POST['currency'],$_POST['bank'],)) {
-            $name = $_POST['name'];
-            $miles = intval($_POST['miles']);
-            $speed = intval($_POST['speed']);
-            $hours = intval($_POST['hours']);
-            $gas = floatval($_POST['gas']);
-            $efficiency = intval($_POST['efficiency']);
-        }
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            //UPDATE!!!
+            if(empty($_POST['name'])) {
+                echo '<span class="error">Please fill out your name</span>';
+            }
+            if(empty($_POST['miles'])) {
+                echo '<span class="error">Please fill your total miles driving</span>';
+            }
+            if(empty($_POST['speed'])) {
+                echo '<span class="error">Please fill out how fast will you be driving</span>';
+            }
+            if(empty($_POST['hours'])) {
+                echo '<span class="error">Please fill out how many hours your will be driving per day</span>';
+            }
+            if(empty($_POST['price'])) {
+                echo '<span class="error">Please select a gas price</span>';
+            }
+            if($_POST['efficiency'] == NULL) {
+                echo '<span class="error">Please select your car\'s efficiency</span>';
+            }
+
+            //name, miles, speed, hours, price, efficiency
+            if(isset($_POST['name'], $_POST['miles'], $_POST['speed'],$_POST['hours'],$_POST['price'],$_POST['efficiency'],)) {
+                $name = $_POST['name'];
+                $miles = intval($_POST['miles']);
+                $speed = intval($_POST['speed']);
+                $hours = intval($_POST['hours']);
+                $price = floatval($_POST['price']);
+                $efficiency = intval($_POST['efficiency']);
+
+                // I need Total Hours(miles/speed) Total Days driving(totalHours/hours), Total Gallons(miles/price), Total Cost(price*gallons)
+                $totalHours = $miles / $speed;
+                $totalDays = $totalHours / $hours;
+                $totalGallons = $miles / $efficiency;
+                $totalCost = $price * $totalGallons;
+                if(!empty($name && $miles && $speed && $hours && $price && $efficiency)) {
+                    echo '
+                    <div class="box">
+                    <h2>Hello '.$name.',</h2>
+                    <p>You will be travelling a total of '.number_format($totalHours, 2).' hours, taking '.number_format($totalDays, 2).' days.</p>
+                    <p>And, you will be using '.number_format($totalGallons, 2).' gallons of gas, costing you $'.number_format($totalCost, 2).' dollars.</p>
+                    </div>
+                    ';
+                }
+            } //end isset
+        } //end SERVER
     ?>
 </body>
 </html>

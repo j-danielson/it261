@@ -8,28 +8,13 @@ include('includes/header.php');
 ?>
     <div id="wrapper">
         <main>
-            <?php 
-            echo $album;
-            ?>
-            <img src="images/dailyimg/<?php echo $pic;?>" alt="<?php echo $alt;?>">
+
+            <?php include('includes/form.php') ;?>
         </main>
         <aside id="<?php echo $class;?>">
-            <h3><?php echo $alt?></h3>
-            <p><?php echo $content;?></p>
-            <!-- <a href="weeks/week2/">Week 2</a> -->
+
         </aside>
-        <div id="days">
-            <h3>Check out our daily albums</h3>
-            <ul>
-                <li><a href="daily.php?today=Sunday">Sunday</a></li>
-                <li><a href="daily.php?today=Monday">Monday</a></li>
-                <li><a href="daily.php?today=Tuesday">Tuesday</a></li>
-                <li><a href="daily.php?today=Wednesday">Wednesday</a></li>
-                <li><a href="daily.php?today=Thursday">Thursday</a></li>
-                <li><a href="daily.php?today=Friday">Friday</a></li>
-                <li><a href="daily.php?today=Saturday">Saturday</a></li>
-            </ul>
-        </div>
+
     </div> <!--end of wrapper-->
 
     <?php

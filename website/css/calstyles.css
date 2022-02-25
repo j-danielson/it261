@@ -1,0 +1,117 @@
+/* Travel Calculator stylesheet */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: seashell; 
+    width: 400px;
+    margin: 20px auto;
+    border: 1px solid lightgrey;
+    padding: 15px;
+}
+
+.buttonbox {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+select {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100px;
+}
+
+form li {
+    line-height: .8;
+    list-style-type: none;
+}
+
+label + ul {
+    margin: 5px 0 10px 15px;
+}
+
+input[type=text] {
+    width: 75%;
+    height:auto;
+}
+
+input[type=number] {
+    width: 50%;
+    height:auto;
+}
+
+input[type=radio] {
+    margin-right: 3px;
+    height:auto;
+    width: auto;
+}
+
+input[type=submit] {
+    height: 25px;
+    width: 75px;
+    margin-right: 10px;
+}
+
+input {
+    height: 40px;
+    width: 100%;
+}
+
+select {
+    margin-bottom: 10px;
+    height: 25px;
+}
+
+button {
+    height: 25px;
+    width: 75px;
+    text-align: center;
+}
+
+.box {
+    width: 500px;
+    margin: 10px auto;
+    text-align: center;
+    background: seashell; 
+}
+
+/* typography */
+
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: playfair, serif;
+}
+
+
+.error {
+    display: block;
+    text-align: center;
+    color: red;
+    font-style: italic;
+    font-size: .9em;
+}
