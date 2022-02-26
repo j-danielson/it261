@@ -10,39 +10,15 @@
 <body>
     <header>
         <div id="inner-header">
-             <!-- <a href="index.php">
-            <img id="logo" src="images/logo.jpg" alt="logo">
-            </a>   SAVING INCASE I WANT AN IMAGE --> 
-            <!-- </a> -->
-            <!-- <nav>
-                <h1>Welcome To My Portal Page!</h1>
+            <div id="welcome">
+                <h1><?php echo $headline ?></h1>
+            </div>
+            <nav>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="daily.php">Daily</a></li>
-                    <li><a href="project.php">Project</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="gallery.php">Gallery</a></li>
+                <?php
+                    echo make_links($nav);
+                ?>
                 </ul>
-            </nav> -->
-
-    <nav>
-        <h1><?php echo $headline ?></h1>
-        <ul>
-        <?php
-            echo make_links($nav);
-        ?>
-        </ul>
-    </nav>
-
-            <!-- <nav>
-                <ul>
-                    <?php
-                    foreach($nav as $key => $value) {
-                        echo '<li style="list-style-type:none;"><a style="text-decoration:none;" href="'.$key.'"> '.$value.'</a></li>';
-                    }
-                    ?>
-                </u>
-            </nav> -->
+            </nav>
         </div> <!---end inner header-->
     </header>

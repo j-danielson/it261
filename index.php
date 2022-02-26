@@ -13,24 +13,22 @@
              <!-- <a href="index.php">
             <img id="logo" src="images/logo.jpg" alt="logo">
             </a>   SAVING INCASE I WANT AN IMAGE --> 
-            <!-- </a> -->
             <div id="welcome">
                 <h1>Welcome To My Portal Page!</h1>
             </div>  
             <nav>
                 <ul>
-                    <li><a class="headNav" href="/website/index.php">Home</a></li>
+                    <li><a class="headNav" href="website/index.php">Home</a></li>
                     <li><a class="headNav" href="website/daily.php">Switch</a></li>
                     <li><a class="headNav" href="website/adder.php">Troubleshoot</a></li>
                     <li><a class="headNav" href="">Project</a></li>
-                    <li><a class="headNav" href="">Calculator</a></li>
+                    <li><a class="headNav" href="website/calculator.php">Calculator</a></li>
                     <li><a class="headNav" href="">Gallery</a></li>
                     <li><a class="headNav" href="">Database</a></li>
                 </ul>
             </nav>
         </div> <!---end inner header-->
     </header>
-    <!-- <div class="line">&nbsp;</div> -->
     <div id="wrapper">
         <div id="hero">
             <img id="my-photo" src="images/profilephoto.jpg" alt="Me">
@@ -48,16 +46,10 @@
         </main>
         <aside>
             <h3>Weekly Assignments</h3>
-            <!-- <form action="weeks/week2/index.php">
-                <input id="week1btn" type="submit" value="WEEK 2" />
-            </form> -->
             <button id="week2btn" type="button">WEEK 2</button>
             <button id="week3btn" type="button">WEEK 3</button>
             <button id="week4btn" type="button">WEEK 4</button>
-            <!-- <form action="weeks/week3/home.php">
-                <input type="submit" value="WEEK 3" />
-            </form> -->
-            <!-- <a href="weeks/week2/">Week 2</a> -->
+            <button id="week5btn" type="button">WEEK 5</button>
         </aside>
 
         <div id="week2modal" class="modal">
@@ -88,7 +80,13 @@
             <a href="weeks/week4/form-get.php" style="margin: 10px">form-get.php</a><br>
             <a href="weeks/week4/celcius.php" style="margin: 10px">celcius.php</a><br>
             <a href="weeks/week4/arithmetic-form.php" style="margin: 10px">arithmetic-form.php</a><br>
-
+            </div>
+        </div>
+        <div id="week5modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week5/currency.php"style="margin: 10px"> currency.php</a> <br>
+            <a href="weeks/week5/currency2.php" style="margin: 10px">currency2.php</a><br>
+            <a href="weeks/week5/null.php" style="margin: 10px">null.php</a><br>
             </div>
         </div>
     </div> <!--end of wrapper-->
@@ -116,6 +114,7 @@
         var span2 = document.getElementsByClassName("close")[0];
         var span3 = document.getElementsByClassName("close")[1];
         var span4 = document.getElementsByClassName("close")[2];
+        var span5 = document.getElementsByClassName("close")[3];
 
         week2btn.onclick = function() {
         week2modal.style.display = "block";
@@ -126,6 +125,9 @@
         week4btn.onclick = function() {
         week4modal.style.display = "block";
         }
+        week5btn.onclick = function() {
+        week5modal.style.display = "block";
+        }
         span2.onclick = function() {
         week2modal.style.display = "none";
         }
@@ -134,6 +136,9 @@
         }
         span4.onclick = function() {
         week4modal.style.display = "none";
+        }
+        span5.onclick = function() {
+        week5modal.style.display = "none";
         }
         window.onclick = function(event) {
         if (event.target == week2modal) {
@@ -150,6 +155,11 @@
             week4modal.style.display = "none";
             }
         }  
+        window.onclick = function(event) {
+        if (event.target == week5modal) {
+            week5modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>

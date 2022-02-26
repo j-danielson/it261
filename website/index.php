@@ -20,4 +20,4 @@ include('includes/header.php');
     </div> <!--end of wrapper-->
 <?php
     include('includes/footer.php');
-    ?>
+?>

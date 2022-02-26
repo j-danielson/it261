@@ -39,16 +39,16 @@ $nav['index.php'] = 'Home';
         $my_return = '';
         foreach($nav as $key => $value) {
             if(THIS_PAGE == $key){
-                $my_return .= '<li><a class="current" href="'.$key.'">'.$value.'</a> </li>';
+                $my_return .= '<li><a class="current headNav" href="'.$key.'">'.$value.'</a> </li>';
         } else {
-            $my_return .= '<li><a href="'.$key.'">'.$value.'</a> </li>';
+            $my_return .= '<li><a class="headNav" href="'.$key.'">'.$value.'</a> </li>';
         }
     
     
         } // end foreach
         return $my_return;
     } // end function
-    
+
 // daily php below
     if(isset($_GET['today'])) {
         $today = $_GET['today'];
