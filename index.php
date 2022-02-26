@@ -31,6 +31,7 @@
     </header>
     <div id="wrapper">
         <div id="hero">
+            <div id="profile">
             <img id="my-photo" src="images/profilephoto.jpg" alt="Me">
             <div id="about-me">
                 
@@ -39,17 +40,19 @@
                     Outside of school and work, I mostly spend my time chilling with friends, playing video games, and walking my corgi Porkchop!
                 </p>
             </div>
-        </div> <!--end hero-->
-        <main>
+            </div>
+            <main>
             <p style="margin-left: 40px">MAMP Scrrenshot! <br> <img id="mamp-screenshot" src="images/mampscreenshot.png" alt="MAMP"></p>
             <p style="margin-left: 40px">MAMP Error Scrrenshot! <br> <img id="error-screenshot" src="images/mamperror.png" alt="ERROR"></p>
-        </main>
+            </main>
+        </div> <!--end hero-->
         <aside>
             <h3>Weekly Assignments</h3>
             <button id="week2btn" type="button">WEEK 2</button>
             <button id="week3btn" type="button">WEEK 3</button>
             <button id="week4btn" type="button">WEEK 4</button>
             <button id="week5btn" type="button">WEEK 5</button>
+            <button id="week6btn" type="button">WEEK 6</button>
         </aside>
 
         <div id="week2modal" class="modal">
@@ -89,6 +92,14 @@
             <a href="weeks/week5/null.php" style="margin: 10px">null.php</a><br>
             </div>
         </div>
+        <div id="week6modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week6/form.php"style="margin: 10px">form.php</a> <br>
+            <a href="weeks/week6/form2.php" style="margin: 10px">form2.php</a><br>
+            <a href="weeks/week6/functions.php" style="margin: 10px">functions.php</a><br>
+            <a href="weeks/week6/thx.php" style="margin: 10px">thx.php</a><br>
+            </div>
+        </div>
     </div> <!--end of wrapper-->
 
     <footer>
@@ -115,6 +126,7 @@
         var span3 = document.getElementsByClassName("close")[1];
         var span4 = document.getElementsByClassName("close")[2];
         var span5 = document.getElementsByClassName("close")[3];
+        var span6 = document.getElementsByClassName("close")[4];
 
         week2btn.onclick = function() {
         week2modal.style.display = "block";
@@ -128,6 +140,9 @@
         week5btn.onclick = function() {
         week5modal.style.display = "block";
         }
+        week6btn.onclick = function() {
+        week6modal.style.display = "block";
+        }
         span2.onclick = function() {
         week2modal.style.display = "none";
         }
@@ -139,6 +154,9 @@
         }
         span5.onclick = function() {
         week5modal.style.display = "none";
+        }
+        span6.onclick = function() {
+        week6modal.style.display = "none";
         }
         window.onclick = function(event) {
         if (event.target == week2modal) {
@@ -158,6 +176,11 @@
         window.onclick = function(event) {
         if (event.target == week5modal) {
             week5modal.style.display = "none";
+            }
+        }
+        window.onclick = function(event) {
+        if (event.target == week6modal) {
+            week6modal.style.display = "none";
             }
         }
     </script>

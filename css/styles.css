@@ -127,22 +127,22 @@ nav li {
 }
 
 #hero {
-    /* background: rgba(252, 115, 7, 0.7); */
     border-radius: 15px;
     margin-bottom: 10px;
     width: 62%;
     margin-right: 3%;
-    /* clear:both; */
+    display: flex;
+    flex-direction: column;
+}
+
+#profile {
     display: flex;
 }
 
 main {
     order: 3;
-    width:62%;
     padding: 5px;
     margin-bottom:20px;
-    /* background:#FDDC22; */
-    /* float:left; */
 }
 
 #mamp-screenshot {
@@ -162,12 +162,14 @@ main {
     margin-left: auto;
 }
 aside {
-    /* I will need to combine main and hero div as I add weeks  */
     text-align: center;
     width:35%;
     padding: 5px;
     background: #849BDA;
     border-radius: 10px;
+    height: fit-content;
+    margin-top: 75px;
+    padding-bottom: 25px;
 }
 
 aside h3 {
