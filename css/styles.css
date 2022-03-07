@@ -89,7 +89,17 @@ nav li {
 .headNav:hover:before {
     height: 100%;
 } */
-
+.current {
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+    height: 25px;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 5px 5px 0px 0px;
+    background: #849BDA;
+}
 .headNav {
     display: flex;
     position: relative;
@@ -260,4 +270,22 @@ footer li {
     float:left;
     margin-right:30px;
     list-style-type: none;
+}
+
+/* gallery */
+
+table {
+    border: 1px solid #849BDA;
+    border-collapse: collapse;
+    font-size: large;
+}
+
+td {
+    border: 1px solid #849BDA;
+    text-align: center;
+}
+
+td img {
+    width: 300px;
+    height: 300px;
 }

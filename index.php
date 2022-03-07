@@ -23,7 +23,7 @@
                     <li><a class="headNav" href="website/adder.php">Troubleshoot</a></li>
                     <li><a class="headNav" href="">Project</a></li>
                     <li><a class="headNav" href="website/calculator.php">Calculator</a></li>
-                    <li><a class="headNav" href="">Gallery</a></li>
+                    <li><a class="headNav" href="website/gallery.php">Gallery</a></li>
                     <li><a class="headNav" href="">Database</a></li>
                 </ul>
             </nav>
@@ -53,6 +53,7 @@
             <button id="week4btn" type="button">WEEK 4</button>
             <button id="week5btn" type="button">WEEK 5</button>
             <button id="week6btn" type="button">WEEK 6</button>
+            <button id="week7btn" type="button">WEEK 7</button>
         </aside>
 
         <div id="week2modal" class="modal">
@@ -100,6 +101,14 @@
             <a href="weeks/week6/thx.php" style="margin: 10px">thx.php</a><br>
             </div>
         </div>
+        <div id="week7modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week7/form3.php"style="margin: 10px">form3.php</a> <br>
+            <a href="weeks/week7/pictures.php"style="margin: 10px">pictures.php</a> <br>
+            <a href="weeks/week7/random.php"style="margin: 10px">random.php</a> <br>
+            <a href="weeks/week7/strings.php"style="margin: 10px">strings.php</a> <br>
+            </div>
+        </div>
     </div> <!--end of wrapper-->
 
     <footer>
@@ -127,6 +136,7 @@
         var span4 = document.getElementsByClassName("close")[2];
         var span5 = document.getElementsByClassName("close")[3];
         var span6 = document.getElementsByClassName("close")[4];
+        var span7 = document.getElementsByClassName("close")[5];
 
         week2btn.onclick = function() {
         week2modal.style.display = "block";
@@ -143,6 +153,9 @@
         week6btn.onclick = function() {
         week6modal.style.display = "block";
         }
+        week7btn.onclick = function() {
+        week7modal.style.display = "block";
+        }
         span2.onclick = function() {
         week2modal.style.display = "none";
         }
@@ -157,6 +170,9 @@
         }
         span6.onclick = function() {
         week6modal.style.display = "none";
+        }
+        span7.onclick = function() {
+        week7modal.style.display = "none";
         }
         window.onclick = function(event) {
         if (event.target == week2modal) {
@@ -181,6 +197,11 @@
         window.onclick = function(event) {
         if (event.target == week6modal) {
             week6modal.style.display = "none";
+            }
+        }
+        window.onclick = function(event) {
+        if (event.target == week7modal) {
+            week7modal.style.display = "none";
             }
         }
     </script>

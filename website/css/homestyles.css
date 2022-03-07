@@ -262,3 +262,51 @@ footer li {
     margin-right:30px;
     list-style-type: none;
 }
+
+/* Form CSS */
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.subUl {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 10px;
+    list-style-type: none;
+    margin-bottom: 7px;
+}
+
+.subUl li {
+    display: flex;
+    flex-direction: column;
+}
+
+.subUl label {
+    text-align: center;
+}
+
+.inputbox {
+    display: block;
+    height: 30px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+input[type=submit] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.2em;
+}

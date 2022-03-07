@@ -1,4 +1,5 @@
 <?php
+
 // we need to define the page that we are on as the page
 
 define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
@@ -21,8 +22,14 @@ switch(THIS_PAGE) {
     case 'contact.php':
         $title = 'Our Contact Page';
         $body = 'contact inner';
-        $headline = 'Contact Us today!';
+        $headline = 'Sign Up!';
         $css = 'daily';
+        break;
+    
+    case 'gallery.php':
+        $title = 'Our Gallery Page';
+        $body = 'gallery inner';
+        $headline = 'Album Gallery';
         break;
 }
 
@@ -39,7 +46,7 @@ $nav['index.php'] = 'Home';
         $my_return = '';
         foreach($nav as $key => $value) {
             if(THIS_PAGE == $key){
-                $my_return .= '<li><a class="current headNav" href="'.$key.'">'.$value.'</a> </li>';
+                $my_return .= '<li><a class="current" href="'.$key.'">'.$value.'</a> </li>';
         } else {
             $my_return .= '<li><a class="headNav" href="'.$key.'">'.$value.'</a> </li>';
         }
@@ -115,3 +122,100 @@ $nav['index.php'] = 'Home';
     }
 
     // below is my form PHP
+
+    ob_start();
+
+    $name = '';
+    $email = '';
+    $phone = '';
+    $genre = '';
+    $adds = '';
+    $sub = '';
+    $privacy = '';
+    $name_err ='';
+    $email_err = '';
+    $genre_err = '';
+    $adds_err = '';
+    $sub_err = '';
+    $phone_err = '';
+    $privacy_err = '';
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if(empty($_POST['name'])) {
+            $first_name_err = 'Please enter your full name';
+        } else {
+            $first_name = $_POST['name'];
+        }
+
+        if(empty($_POST['email'])) {
+            $email_err = 'Please enter your email';
+        } else {
+            $email = $_POST['email'];
+        }
+
+        if(empty($_POST['sub'])) {
+            $sub_err = 'Please select a subscription length';
+        } else {
+            $sub = $_POST['sub'];
+        }
+
+        if(empty($_POST['phone'])) { 
+            $phone_err = 'Please enter your phone number please!';
+        } elseif(array_key_exists('phone', $_POST)) {
+            if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+                $phone_err = 'Invalid format';
+            }
+        } else {
+            $phone = $_POST['phone'];
+        }
+        if(empty($_POST['adds'])) {
+            $adds_err = '';
+        } else {
+            $adds = $_POST['adds'];
+        }
+        if($_POST['genre'] == NULL) {
+            $genre_err = 'Please select a genre';
+        } else {
+            $genre = $_POST['genre'];
+        }
+        if(empty($_POST['privacy'])) {
+            $privacy_err = 'Please agree to our privacy agreement';
+        } else {
+            $privacy = $_POST['privacy'];
+        }
+
+        //our wines function!!
+        // function my_wines($wines) {
+        //     $my_return = '';
+        //     if(!empty($_POST['wines'])) {
+        //         $my_return = implode(', ', $_POST['wines']);
+        //     }else {
+        //         $wines_err = 'No wines';
+        //     }
+        //     return $my_return;
+        // } // end function
+
+        if(isset($_POST['name'], $_POST['email'], $_POST['genre'], $_POST['phone'], $_POST['adds'], $_POST['sub'], $_POST['privacy'])) {
+            $to = 'jdanielson04@gmail.com';
+            $subject = 'Test Email ' .date('m/d/y, h i A');
+            $body = '
+                First Name : '.$first_name.' '.PHP_EOL.'
+                Email : '.$email.' '.PHP_EOL.'
+                Phone Number : '.$phone.' '.PHP_EOL.'
+                Subscription Length : '.$sub.' '.PHP_EOL.'
+                Genre : '.$genre.' '.PHP_EOL.'
+                First Box Additions : '.my_wines($wines).' '.PHP_EOL.'
+            ';
+
+            if(!empty($name && $email && $genre && $phone && $sub && $privacy) && !preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+
+                $headers = array(
+                    'From' => 'noreply@joshuadanielson.me',
+                    'Reply to: ' => ''.$email.' '
+                );
+                mail($to, $subject, $body, $headers);
+                header('Location:thx.php');
+            } //close if not empty statement
+        }
+
+    } // end server request
