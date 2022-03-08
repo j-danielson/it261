@@ -54,6 +54,7 @@
             <button id="week5btn" type="button">WEEK 5</button>
             <button id="week6btn" type="button">WEEK 6</button>
             <button id="week7btn" type="button">WEEK 7</button>
+            <button id="week8btn" type="button">WEEK 8</button>
         </aside>
 
         <div id="week2modal" class="modal">
@@ -109,6 +110,15 @@
             <a href="weeks/week7/strings.php"style="margin: 10px">strings.php</a> <br>
             </div>
         </div>
+        <div id="week8modal" class="modal">
+            <div class="weeklist"><span class="close">&times;</span>
+            <a href="weeks/week8/config.php"style="margin: 10px">config.php</a> <br>
+            <a href="weeks/week8/people.php"style="margin: 10px">people.php</a> <br>
+            <a href="weeks/week8/people-view.php"style="margin: 10px">people-view.php</a> <br>
+            <a href="weeks/week8/includes/header.php"style="margin: 10px">includes/header.php</a> <br>
+            <a href="weeks/week8/includes/footer.php"style="margin: 10px">includes/footer.php</a> <br>
+            </div>
+        </div>
     </div> <!--end of wrapper-->
 
     <footer>
@@ -137,6 +147,7 @@
         var span5 = document.getElementsByClassName("close")[3];
         var span6 = document.getElementsByClassName("close")[4];
         var span7 = document.getElementsByClassName("close")[5];
+        var span8 = document.getElementsByClassName("close")[6];
 
         week2btn.onclick = function() {
         week2modal.style.display = "block";
@@ -156,6 +167,9 @@
         week7btn.onclick = function() {
         week7modal.style.display = "block";
         }
+        week8btn.onclick = function() {
+        week8modal.style.display = "block";
+        }
         span2.onclick = function() {
         week2modal.style.display = "none";
         }
@@ -173,6 +187,9 @@
         }
         span7.onclick = function() {
         week7modal.style.display = "none";
+        }
+        span8.onclick = function() {
+        week8modal.style.display = "none";
         }
         window.onclick = function(event) {
         if (event.target == week2modal) {
@@ -202,6 +219,11 @@
         window.onclick = function(event) {
         if (event.target == week7modal) {
             week7modal.style.display = "none";
+            }
+        }
+        window.onclick = function(event) {
+        if (event.target == week8modal) {
+            week8modal.style.display = "none";
             }
         }
     </script>

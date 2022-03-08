@@ -1,0 +1,50 @@
+/* My styles for week 8 people page */
+
+ *{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+ }
+
+ body {
+     background: beige;
+ }
+
+ #wrapper {
+     max-width: 1200px;
+     /* upi will still be using the values form a 940 px grid please */
+     margin: 20px auto;
+ }
+
+ .inner {
+    max-width: 1200px;
+    /* upi will still be using the values form a 940 px grid please */
+    margin: 0 auto;
+ }
+
+ main {
+     float: left;
+    /* main in px = 580px */
+    /* change to percentages = 580 devided by 940 */
+    width: 61.70%
+ }
+
+ aside {
+     float: right;
+     /* width will be 340px divided by 940 */
+     width: 36.17%
+ }
+
+ footer{
+     clear: both;
+     height: 60px;
+     line-height: 60px;
+
+ }
+
+ footer li {
+     list-style-type: none;
+     float: left;
+     margin-right: 30px;
+
+ }
