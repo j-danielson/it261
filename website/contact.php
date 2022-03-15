@@ -5,9 +5,6 @@ error_reporting(E_ALL);
 include('config.php');
 include('includes/header.php');
 
-function sayHello($greeting) {
-    echo"Hello $greeting";
-    }
 
 ?>
     <div id="wrapper">

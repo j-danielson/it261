@@ -41,20 +41,20 @@
                 </p>
             </div>
             </div>
-            <main>
+            <main id="mainmain">
             <p style="margin-left: 40px">MAMP Scrrenshot! <br> <img id="mamp-screenshot" src="images/mampscreenshot.png" alt="MAMP"></p>
             <p style="margin-left: 40px">MAMP Error Scrrenshot! <br> <img id="error-screenshot" src="images/mamperror.png" alt="ERROR"></p>
             </main>
         </div> <!--end hero-->
         <aside>
             <h3>Weekly Assignments</h3>
-            <button id="week2btn" type="button">WEEK 2</button>
-            <button id="week3btn" type="button">WEEK 3</button>
-            <button id="week4btn" type="button">WEEK 4</button>
-            <button id="week5btn" type="button">WEEK 5</button>
-            <button id="week6btn" type="button">WEEK 6</button>
-            <button id="week7btn" type="button">WEEK 7</button>
-            <button id="week8btn" type="button">WEEK 8</button>
+            <button class="assignButton" id="week2btn" type="button">WEEK 2</button>
+            <button class="assignButton" id="week3btn" type="button">WEEK 3</button>
+            <button class="assignButton" id="week4btn" type="button">WEEK 4</button>
+            <button class="assignButton" id="week5btn" type="button">WEEK 5</button>
+            <button class="assignButton" id="week6btn" type="button">WEEK 6</button>
+            <button class="assignButton" id="week7btn" type="button">WEEK 7</button>
+            <button class="assignButton" id="week8btn" type="button">WEEK 8</button>
         </aside>
 
         <div id="week2modal" class="modal">

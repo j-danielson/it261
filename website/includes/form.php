@@ -1,6 +1,6 @@
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
     <fieldset>
-        <legend>Contact Information</legend>
+        <legend><h2>Contact Information</h2></legend>
         <!-- Name, Email, Phone, Genre(dropdown), subscription length(checkbox), agree to privacy -->
 
         <label>Full Name</label>
@@ -11,25 +11,25 @@
         <input class="inputbox" type="email" name="email" value="<?php if(isset($_POST['email'])) echo htmlspecialchars($_POST['email']) ;?>">
         <span class="error"><?php echo $email_err ;?></span>
 
-        <label>Phone (need to verify --)</label>
-        <input class="inputbox" type="tel" name="phone" value="<?php if(isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']) ;?>">
+        <label>Phone</label>
+        <input class="inputbox" type="tel" name="phone" placeholder="XXX-XXX-XXXX" value="<?php if(isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']) ;?>">
         <span class="error"><?php echo $phone_err ;?></span>
 
         <label>Subscription Length</label>
             <ul class="subUl">
-                <li>
+                <li class="subLi">
                     <input type="radio" name="sub" value="1month" <?php if(isset($_POST['sub']) && $_POST['sub'] == '1month') echo 'checked = "checked"' ;?>>
                     <label>1 month<br>$14.99</label>
                 </li>
-                <li>
+                <li class="subLi">
                     <input type="radio" name="sub" value="3month" <?php if(isset($_POST['sub']) && $_POST['sub'] == '3month') echo 'checked = "checked"' ;?>>
                     <label>3 Months<br>$42.99<br><span style="color: red; font-size: 13px">5% off</span></label>
                 </li>
-                <li>
+                <li class="subLi">
                     <input type="radio" name="sub" value="6month" <?php if(isset($_POST['sub']) && $_POST['sub'] == '6month') echo 'checked = "checked"' ;?>>
                     <label>6 Months<br>$80.99<br><span style="color: red; font-size: 13px">10% off</span></label>
                 </li>
-                <li>
+                <li class="subLi">
                     <input type="radio" name="sub" value="12month" <?php if(isset($_POST['sub']) && $_POST['sub'] == '12month') echo 'checked = "checked"' ;?>>
                     <label>12 Months<br>$152.99<br><span style="color: red; font-size: 13px">15% off</span></label>
                 </li>
@@ -48,7 +48,7 @@
             </select>
             <span class="error"><?php echo $genre_err ;?></span>
 
-        <label>First Box Additions</label>
+        <label>First Box Additions<span style="font-size:small; font-weight:normal"><i> - optional</i></span></label>
         <ul>
             <li>
                 <input type="checkbox" name="adds[]" value="player" <?php if(isset($_POST['adds']) && in_array('player', $adds)) echo 'checked = "checked"' ;?>>Record Player - $199.99
@@ -60,17 +60,20 @@
                 <input type="checkbox" name="adds[]" value="headphones" <?php if(isset($_POST['adds']) && in_array('headphones', $adds)) echo 'checked = "checked"' ;?>>Headphones - $34.99
             </li>
             <li>
-                <input type="checkbox" name="adds[]" value="vinylbox" <?php if(isset($_POST['adds']) && in_array('vinylbox', $adds)) echo 'checked = "checked"' ;?>> RotM Vinyl Storage Box - $11.99
+                <input type="checkbox" name="adds[]" value="vinylbox" <?php if(isset($_POST['adds']) && in_array('vinylbox', $adds)) echo 'checked = "checked"' ;?>>RotM Vinyl Storage Box - $11.99
             </li>
         </ul>
 
-        <label>Click To Agree To Our Privacy Agreement</label>
+        <label>Agree To Our Privacy Agreement<br><span style="font-size:small; font-weight:normal"><a href="https://tinyurl.com/3upz9z8v" target="_blank"><i>you can read our agreement here</i></a></span></label>
         <ul>
             <li>
                 <input type="radio" name="privacy" value="yes" <?php if(isset($_POST['privacy']) && $_POST['privacy'] == 'yes') echo 'checked = "checked"' ;?>>I agree
             </li>
         </ul>
         <span class="error"><?php echo $privacy_err ;?></span>
+        <div>
         <input type="submit" value="Submit">
+        <button><a href="" id="resetButton">Reset</a></button>
+        </div>
     </fieldset>
 </form>

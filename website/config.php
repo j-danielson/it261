@@ -1,5 +1,10 @@
 <?php
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
 
+    ob_start();
+    define('DEBUG', 'TRUE'); 
+    include('credentials.php');
 // we need to define the page that we are on as the page
 
 define('THIS_PAGE', basename($_SERVER['PHP_SELF']));
@@ -22,7 +27,7 @@ switch(THIS_PAGE) {
     case 'contact.php':
         $title = 'Our Contact Page';
         $body = 'contact inner';
-        $headline = 'Sign Up!';
+        $headline = 'Record of the Month';
         $css = 'daily';
         break;
     
@@ -31,6 +36,24 @@ switch(THIS_PAGE) {
         $body = 'gallery inner';
         $headline = 'Album Gallery';
         break;
+    
+    case 'project.php':
+        $title = 'Our Video Game Page';
+        $body = 'vg inner';
+        $headline = 'Video Game List';
+        break;
+
+    case 'project-view.php':
+        $title = 'Our Video Game Page';
+        $body = 'vg inner';
+        $headline = 'Video Game Info';
+        break;
+
+    case 'about.php':
+        $title = 'Our Table page';
+        $body = 'about inner';
+        $headline = 'Video Game Table Screenshot';
+        break;
 }
 
 // my navigation and my function!!
@@ -38,7 +61,7 @@ switch(THIS_PAGE) {
 $nav['index.php'] = 'Home';
     $nav['about.php'] = 'About';
     $nav['daily.php'] = 'Daily';
-    $nav['project.php'] = 'Project';
+    $nav['project.php'] = 'Video Games';
     $nav['contact.php'] = 'Contact';
     $nav['gallery.php'] = 'Gallery';
 
@@ -123,7 +146,7 @@ $nav['index.php'] = 'Home';
 
     // below is my form PHP
 
-    ob_start();
+
 
     $name = '';
     $email = '';
@@ -142,9 +165,9 @@ $nav['index.php'] = 'Home';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         if(empty($_POST['name'])) {
-            $first_name_err = 'Please enter your full name';
+            $name_err = 'Please enter your full name';
         } else {
-            $first_name = $_POST['name'];
+            $name = $_POST['name'];
         }
 
         if(empty($_POST['email'])) {
@@ -184,27 +207,27 @@ $nav['index.php'] = 'Home';
             $privacy = $_POST['privacy'];
         }
 
-        //our wines function!!
-        // function my_wines($wines) {
-        //     $my_return = '';
-        //     if(!empty($_POST['wines'])) {
-        //         $my_return = implode(', ', $_POST['wines']);
-        //     }else {
-        //         $wines_err = 'No wines';
-        //     }
-        //     return $my_return;
-        // } // end function
+        // our wines function!!
+        function list_addons($adds) {
+            $my_return = '';
+            if(!empty($_POST['adds'])) {
+                $my_return = implode(', ', $_POST['adds']);
+            }else {
+                $adds_err = 'No adds';
+            }
+            return $my_return;
+        } // end function
 
         if(isset($_POST['name'], $_POST['email'], $_POST['genre'], $_POST['phone'], $_POST['adds'], $_POST['sub'], $_POST['privacy'])) {
             $to = 'jdanielson04@gmail.com';
             $subject = 'Test Email ' .date('m/d/y, h i A');
             $body = '
-                First Name : '.$first_name.' '.PHP_EOL.'
+                Name : '.$name.' '.PHP_EOL.'
                 Email : '.$email.' '.PHP_EOL.'
                 Phone Number : '.$phone.' '.PHP_EOL.'
                 Subscription Length : '.$sub.' '.PHP_EOL.'
                 Genre : '.$genre.' '.PHP_EOL.'
-                First Box Additions : '.my_wines($wines).' '.PHP_EOL.'
+                First Box Additions : '.list_addons($adds).' '.PHP_EOL.'
             ';
 
             if(!empty($name && $email && $genre && $phone && $sub && $privacy) && !preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
@@ -219,3 +242,17 @@ $nav['index.php'] = 'Home';
         }
 
     } // end server request
+
+function myError($myFile, $myLine, $errorMsg){
+if(defined('DEBUG') && DEBUG)
+{
+ echo 'Error in file: <b> '.$myFile.' </b> on line: <b> '.$myLine.' </b>';
+      echo 'Error message: <b> '.$errorMsg.'</b>';
+      die();
+  }  else {
+      echo ' Houston, we have a problem!';
+      die();
+  }
+    
+    
+}

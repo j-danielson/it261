@@ -13,7 +13,7 @@
  #wrapper {
      max-width: 1200px;
      /* upi will still be using the values form a 940 px grid please */
-     margin: 20px auto;
+     margin: 30px auto;
  }
 
  .inner {
@@ -26,13 +26,19 @@
      float: left;
     /* main in px = 580px */
     /* change to percentages = 580 devided by 940 */
-    width: 61.70%
+    width: 61.70%;
  }
 
  aside {
      float: right;
      /* width will be 340px divided by 940 */
-     width: 36.17%
+     width: 36.17%;
+     text-align: center;
+ }
+
+ aside img {
+     display: block;
+     margin: 0 auto 10px auto;
  }
 
  footer{
@@ -47,4 +53,28 @@
      float: left;
      margin-right: 30px;
 
+ }
+
+ main ul {
+     margin-left: 20px;
+     margin-bottom: 10px;
+ }
+
+ p {
+     line-height: 1.4;
+ }
+
+ h1{
+     font-size: 3em;
+     margin-bottom: 10px;
+ }
+
+ h2 {
+     font-size: 2em;
+     margin-bottom: 10px;
+ }
+
+ h3 {
+     font-size: 1.6em;
+    margin-bottom: 10px;
  }

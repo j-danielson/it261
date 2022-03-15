@@ -8,6 +8,7 @@
     $last_name = '';
     $email = '';
     $gender = '';
+    $phone = '';
     $wines = '';
     $regions = '';
     $comments = '';
