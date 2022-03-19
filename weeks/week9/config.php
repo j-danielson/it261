@@ -5,7 +5,9 @@ define('DEBUG', 'TRUE');  // We want to see our errors
 
 include('credentials.php');
 
- 
+ $success = 'you have successfully logged on';
+
+ $errors = [];
 
  
 

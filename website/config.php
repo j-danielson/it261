@@ -54,6 +54,12 @@ switch(THIS_PAGE) {
         $body = 'about inner';
         $headline = 'Video Game Table Screenshot';
         break;
+
+    case 'thx.php':
+        $title = 'Our Thank You Page';
+        $body = 'thx inner';
+        $headline = 'RotM';
+        break;
 }
 
 // my navigation and my function!!
@@ -152,7 +158,7 @@ $nav['index.php'] = 'Home';
     $email = '';
     $phone = '';
     $genre = '';
-    $adds = '';
+    $adds = [];
     $sub = '';
     $privacy = '';
     $name_err ='';
@@ -182,17 +188,18 @@ $nav['index.php'] = 'Home';
             $sub = $_POST['sub'];
         }
 
-        if(empty($_POST['phone'])) { 
-            $phone_err = 'Please enter your phone number please!';
-        } elseif(array_key_exists('phone', $_POST)) {
-            if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
-                $phone_err = 'Invalid format';
-            }
-        } else {
+        if(empty($_POST['phone'])) { // if empty, type in your number
+            $phone_err = 'Please enter your phone number';
+            } elseif(array_key_exists('phone', $_POST)){
+            if(!preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone']))
+            { // if you are not typing the requested format of xxx-xxx-xxxx, display Invalid format
+            $phone_err = 'Invalid format';
+            } else{
             $phone = $_POST['phone'];
-        }
+            } // end else
+            } // end main if
         if(empty($_POST['adds'])) {
-            $adds_err = '';
+            $adds_err = 'test';
         } else {
             $adds = $_POST['adds'];
         }
@@ -202,7 +209,7 @@ $nav['index.php'] = 'Home';
             $genre = $_POST['genre'];
         }
         if(empty($_POST['privacy'])) {
-            $privacy_err = 'Please agree to our privacy agreement';
+            $privacy_err = 'Please agree to our privacy policy';
         } else {
             $privacy = $_POST['privacy'];
         }
@@ -213,16 +220,17 @@ $nav['index.php'] = 'Home';
             if(!empty($_POST['adds'])) {
                 $my_return = implode(', ', $_POST['adds']);
             }else {
-                $adds_err = 'No adds';
+                $my_return = 'None';
             }
             return $my_return;
         } // end function
 
-        if(isset($_POST['name'], $_POST['email'], $_POST['genre'], $_POST['phone'], $_POST['adds'], $_POST['sub'], $_POST['privacy'])) {
-            $to = 'jdanielson04@gmail.com';
-            $subject = 'Test Email ' .date('m/d/y, h i A');
+        if(isset($_POST['name'], $_POST['email'], $_POST['genre'], $_POST['phone'], $_POST['sub'], $_POST['privacy'])) {
+            $to = 'szemeo@mystudentswa.com.';
+            $subject = 'Test Subscription Confirmation ' .date('m/d/y, h i A');
             $body = '
-                Name : '.$name.' '.PHP_EOL.'
+                Thank you '.$name.', for subscriping! '.PHP_EOL.'
+                Please review the information below to make sure it\'s correct '.PHP_EOL.'
                 Email : '.$email.' '.PHP_EOL.'
                 Phone Number : '.$phone.' '.PHP_EOL.'
                 Subscription Length : '.$sub.' '.PHP_EOL.'
@@ -230,7 +238,7 @@ $nav['index.php'] = 'Home';
                 First Box Additions : '.list_addons($adds).' '.PHP_EOL.'
             ';
 
-            if(!empty($name && $email && $genre && $phone && $sub && $privacy) && !preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
+            if(!empty($name && $email && $genre && $phone && $sub && $privacy) && preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $_POST['phone'])) {
 
                 $headers = array(
                     'From' => 'noreply@joshuadanielson.me',
@@ -243,6 +251,19 @@ $nav['index.php'] = 'Home';
 
     } // end server request
 
+    $photos[0] = 'photo1';
+    $photos[1] = 'photo2';
+    $photos[2] = 'photo3';
+    $photos[3] = 'photo4';
+    $photos[4] = 'photo5';
+
+    function random_images($photos) {
+        $my_return = '';
+        $i = rand(0, 4);
+        $selected_image = ''.$photos[$i].'.jpg ';
+        $my_return = '<img src="images/'.$selected_image.'" alt="'.$photos[$i].'">';
+        return $my_return;
+    }
 function myError($myFile, $myLine, $errorMsg){
 if(defined('DEBUG') && DEBUG)
 {

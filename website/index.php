@@ -12,7 +12,8 @@ include('includes/header.php');
             </div>
         </div> <!--end hero-->
         <main id="mainmain">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>   
+            <h3>Random Images!</h3>
+        <p><?php echo random_images($photos); ?></p>   
         </main>
         <aside>
             <h3>The one true aside</h3>

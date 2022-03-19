@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You Page</title>
-</head>
-<body>
-    <h1>Thank you!</h1>
-</body>
-</html>
+<?php 
+
+include('config.php');
+include('includes/header.php')
+
+?>
+
+<div id="wrapper">
+    <main>
+        <h3>Thank you for signing up!</h3>
+        <p>You should receive a confirmation email here shortly.</p><br>
+        <p>If you do not receive your email within an hour, please call us at 1=800-555-7686.</p>
+    </main>
+</div>
+
+<?php 
+include('includes/footer.php')
+?>
