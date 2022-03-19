@@ -80,3 +80,10 @@ footer li {
 #inner-footer ul {
     display: flex;
 }
+
+.error {
+    display: block;
+    color: red;
+    margin-bottom: 8px;
+    font-style: italic;
+}

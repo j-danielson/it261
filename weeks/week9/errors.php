@@ -6,7 +6,7 @@
 if(count($errors) > 0) : ?>
 <div class="error">
 <?php foreach($errors as $error) : ?>
-    <p>
+    <p class="error">
         <?= $error ?>
     </p>
     <?php endforeach;?>

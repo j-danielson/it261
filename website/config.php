@@ -226,7 +226,7 @@ $nav['index.php'] = 'Home';
         } // end function
 
         if(isset($_POST['name'], $_POST['email'], $_POST['genre'], $_POST['phone'], $_POST['sub'], $_POST['privacy'])) {
-            $to = 'szemeo@mystudentswa.com.';
+            $to = 'szemeo@mystudentswa.com';
             $subject = 'Test Subscription Confirmation ' .date('m/d/y, h i A');
             $body = '
                 Thank you '.$name.', for subscriping! '.PHP_EOL.'

@@ -49,6 +49,9 @@ if(isset($_SESSION['username'])) :?>
 </header>
 <div id="wrapper">
 <h1>Welcome to our home page!!!</h1>
+<br>
+<h3>My User Table</h3>
+<img src="images/user-table.png" alt="MYSQL Table">
 </div>
 
 <?php

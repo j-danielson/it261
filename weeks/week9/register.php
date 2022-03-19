@@ -5,7 +5,7 @@ include('includes/header.php');
 ?>
 
 <div class="wrapper">
-<h1 class="ceneter">Register Today!</h1>
+<h1 class="center">Register Today!</h1>
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     <fieldset>

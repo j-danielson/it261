@@ -14,7 +14,7 @@ include('includes/header.php');
         <aside id="<?php echo $class;?>">
             <figure>
                 <img src="images/<?=$pic?>" alt="<?=$alt?>">
-                <figcaption></figcaption>
+                <figcaption><?=$cap ?></figcaption>
             </figure>
         </aside>
         <div id="days">
