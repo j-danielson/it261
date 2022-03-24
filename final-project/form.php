@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-
+session_start();
 include('config.php');
 include('includes/header.php');
 
@@ -10,8 +10,8 @@ include('includes/header.php');
     <div id="wrapper">
         <main>
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ;?>" method="post">
-    <fieldset>
-        <legend><h2>Contact Information</h2></legend>
+    <div id="fieldset">
+        <h2>Subscription Information</h2>
         <!-- Name, Email, Phone, Genre(dropdown), subscription length(checkbox), agree to privacy -->
 
         <label>Full Name</label>
@@ -26,7 +26,7 @@ include('includes/header.php');
         <input class="inputbox" type="tel" name="phone" placeholder="XXX-XXX-XXXX" value="<?php if(isset($_POST['phone'])) echo htmlspecialchars($_POST['phone']) ;?>">
         <span class="error"><?php echo $phone_err ;?></span>
 
-        <label>Subscription Length</label>
+        <label id="sublab">Subscription Length</label>
             <ul class="subUl">
                 <li class="subLi">
                     <input type="radio" name="sub" value="1month" <?php if(isset($_POST['sub']) && $_POST['sub'] == '1month') echo 'checked = "checked"' ;?>>
@@ -48,7 +48,7 @@ include('includes/header.php');
             <span class="error"><?php echo $sub_err ;?></span>
 
         <label>Genre</label>
-           <select classe="inputbox" name="genre">
+           <select class="inputbox" name="genre">
                 <option value="" NULL <?php if(isset($_POST['genre']) && $_POST['genre'] == NULL) echo 'selected = "unselected" ' ;?>>Select One</option>
                 <option value="Hip-Hop"<?php if(isset($_POST['genre']) && $_POST['genre'] == 'Hip-Hop') echo 'selected = "selected" ' ;?>>Rap</option>
                 <option value="Rock"<?php if(isset($_POST['genre']) && $_POST['genre'] == 'Rock') echo 'selected = "selected" ' ;?>>Rock</option>
@@ -87,7 +87,7 @@ include('includes/header.php');
         <input type="submit" value="Submit">
         <button><a href="" id="resetButton">Reset</a></button>
         </div>
-    </fieldset>
+    </div>
 </form>
         </main>
     </div> <!--end of wrapper-->

@@ -15,10 +15,10 @@ include('includes/header.php');
 
 <label>Password</label>
 <input type="password" name="password">
-
+<div style="display: flex">
 <button type="submit" class="btn" name="login_user">Login</button>
 <button type="button" onclick="window.location.href='<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>'">Reset</button>
-
+</div>
 </fieldset>
 
 <?php 
